@@ -1,14 +1,13 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/view/quizz_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:flutter_application_1/Component/navbarBottom.dart';
 class WelcomeScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
+  return Scaffold(
     body: Stack(
       children: [
         SvgPicture.asset('assets/welcome_screen.svg',
@@ -31,7 +30,9 @@ class WelcomeScreen extends StatelessWidget{
               ),),
               ElevatedButton(onPressed: ()
               {Navigator.push(context, MaterialPageRoute(
-                builder: ((context)=>QuizScreen())
+                builder: ((context)=>MaterialApp(
+                  home: HomeBar(),
+                ))
                 ),
                 );
               },
@@ -43,7 +44,7 @@ class WelcomeScreen extends StatelessWidget{
             )
       ],
     )
-   );
+  );
   }
 
 }
